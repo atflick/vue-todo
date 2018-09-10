@@ -1,0 +1,19 @@
+.button {
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid #eee;
+  display: inline-block;
+  &.-complete {
+    background: rgba(red, .5);
+  }
+
+  &.-reopen {
+    background: rgba(green, .5);
+  }
+
+  &.-add {
+    background: rgba(yellow, .5);
+  }
+}
+
+@import 'base';
