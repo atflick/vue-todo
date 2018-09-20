@@ -8,9 +8,9 @@
     "build": "rm -rf build/* && webpack --progress --hide-modules --config webpack.production.js"
   },
   "dependencies": {
-    "vue-router": "^0.7.6",
-    "vue-strap": "^1.0.2",
-    "vue": "^1.0.8"
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vue-strap": "^1.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.1.21",

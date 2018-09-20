@@ -1,55 +1,32 @@
 <template>
   <div>
-    <todo-list v-bind:todos="todos" v-on:add-todo="addTodo"></todo-list>
+    <nav>
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/todo">Todos</router-link></li>
+      <li><router-link to="/other">Other Todos</router-link></li>
+    </nav>
+    <transition name="slide-fade">
+      <router-view> </router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-import TodoList from './components/TodoList/TodoList.vue'
 
   module.exports = {
-    name: 'app',
-
+    name: 'App',
     components: {
-      TodoList
+
     },
 
     data() {
       return {
-        todos: [
-          {
-            title: "Make the bread",
-            project: "Eating Bread",
-            done: false,
-            id: 0
-          },
-          {
-            title: "Breaking bread",
-            project: "Eating bread",
-            done: false,
-            id: 1
-          },
-          {
-            title: "Eating the bread",
-            project: "eating bread",
-            done: false,
-            id: 2
-          },
-        ]
 
       }
     },
 
     methods: {
-      addTodo(newTodo) {
-        const todo = {
-          title: newTodo.name,
-          project: newTodo.project,
-          done: false,
-          id: this.todos.length
-        }
-        this.todos.push(todo);
-      },
+
     }
   }
 </script>
@@ -63,5 +40,24 @@ import TodoList from './components/TodoList/TodoList.vue'
   }
   html {
     font-family: monospace;
+  }
+
+  nav {
+    width: 100%;
+    height: 100px;
+    background:#eee;
+  }
+
+  .slide-fade-enter-active {
+    transition: all 0.5s ease;
+    transition-delay: 2s;
+  }
+  .slide-fade-leave-active {
+    transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(30px);
+    opacity: 0;
   }
 </style>

@@ -24,5 +24,10 @@ module.exports = {
   vue: {
    loaders: { scss: 'style!css!sass'}
   },
-  devtool: '#source-map'
+  devtool: '#source-map',
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
+  }
 }
